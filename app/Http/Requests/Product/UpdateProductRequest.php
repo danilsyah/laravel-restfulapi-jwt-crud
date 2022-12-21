@@ -38,11 +38,20 @@ class UpdateProductRequest extends FormRequest
                 'required', 'string', 'max:255',
             ],
             'price' => [
-                'required', 'numeric', 'min:1', 'max:10',
+                'required', 'numeric', 'min:1',
             ],
             'image' => [
-                'required', 'image','mimes:jpeg,png,jpg', 'max:1048'
+                'nullable', 'image','mimes:jpeg,png,jpg', 'max:1048'
             ],
         ];
+    }
+
+    // response validation failed
+    protected function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json([
+            'errors' => $validator->errors(),
+            'status' => true
+        ], 422));
     }
 }

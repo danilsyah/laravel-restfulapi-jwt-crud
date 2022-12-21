@@ -40,7 +40,7 @@ class StoreProductRequest extends FormRequest
                 'required', 'numeric', 'min:1',
             ],
             'image' => [
-                'required', 'image','mimes:jpeg,png,jpg', 'max:1048'
+                'nullable', 'image','mimes:jpeg,png,jpg', 'max:1048'
             ],
         ];
     }

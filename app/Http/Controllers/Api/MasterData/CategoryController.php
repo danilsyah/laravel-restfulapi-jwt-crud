@@ -41,7 +41,7 @@ class CategoryController extends Controller
             return response()->json(new ResponseResource(true, 'Data Category Ditemukan!', $category), 200);
         }
 
-        return response()->json(new ResponseResource(true, 'Data Category Tidak Ditemukan!', $category), 404);
+        return response()->json(new ResponseResource(false, 'Data Category Tidak Ditemukan!', $category), 404);
     }
 
     public function update(UpdateCategoryRequest $request, $id){
