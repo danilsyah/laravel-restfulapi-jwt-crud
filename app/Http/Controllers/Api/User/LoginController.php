@@ -16,9 +16,40 @@ class LoginController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+     /**
+     * @OA\Post(
+     *      path="/api/login",
+     *      operationId="login",
+     *      tags={"User"},
+     *      summary="Login a user",
+     *      description="Returns user data",
+     *       @OA\RequestBody(
+     *          required=true,
+     *          @OA\JsonContent(@OA\Examples(example="loginUser", summary="Login User",value={"email":"string@email.com", "password":"password"})),
+     *      ),
+     *      @OA\Response(
+     *          response=201,
+     *          description="Successful operation",
+     *          @OA\JsonContent(ref="#/components/schemas/ResponseResource")
+     *       ),
+     *      @OA\Response(
+     *          response=400,
+     *          description="Bad Request"
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      )
+     * )
+     */
     public function __invoke(LoginUserRequest $request)
     {
-        // get credentials from request
+        // membuat  credentials from request email dan password
         $credentials = $request->only('email', 'password');
 
         // if auth failed

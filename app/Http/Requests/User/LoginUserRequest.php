@@ -10,6 +10,15 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
+
+/**
+ * @OA\Schema(
+ *      title="Login User request",
+ *      description="Login request body data",
+ *      type="object",
+ *      required={"email", "password"}
+ * )
+ */
 class LoginUserRequest extends FormRequest
 {
     /**

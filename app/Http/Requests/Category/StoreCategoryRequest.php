@@ -10,8 +10,17 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
+/**
+ * @OA\Schema(
+ *      title="Store Category request",
+ *      description="Update Category request body data",
+ *      type="object",
+ *      required={"name"}
+ * )
+ */
 class StoreCategoryRequest extends FormRequest
 {
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -27,6 +36,7 @@ class StoreCategoryRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
+
     public function rules()
     {
         return [

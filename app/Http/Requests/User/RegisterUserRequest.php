@@ -11,6 +11,14 @@ use Illuminate\Validation\Rule;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
 
+/**
+ * @OA\Schema(
+ *      title="Register User request",
+ *      description="Register request body data",
+ *      type="object",
+ *      required={"name","email", "password", "password_confirmation"}
+ * )
+ */
 class RegisterUserRequest extends FormRequest
 {
     /**

@@ -10,6 +10,14 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
+/**
+ * @OA\Schema(
+ *      title="Update Category request",
+ *      description="Update Category request body data",
+ *      type="object",
+ *      required={"name"}
+ * )
+ */
 class UpdateCategoryRequest extends FormRequest
 {
     /**

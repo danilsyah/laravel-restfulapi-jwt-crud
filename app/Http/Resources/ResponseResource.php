@@ -4,8 +4,18 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
+/**
+ * @OA\Schema(
+ *     title="ResponseResource",
+ *     description="ResponseResource",
+ *     @OA\Xml(
+ *         name="ResponseResource"
+ *     )
+ * )
+ */
 class ResponseResource extends JsonResource
 {
+
     // definisikan properti
     public $status;
     public $message;

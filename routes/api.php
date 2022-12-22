@@ -22,6 +22,8 @@ Route::post('/register', App\Http\Controllers\Api\User\RegisterController::class
 Route::post('/login', App\Http\Controllers\Api\User\LoginController::class)->name('login');
 Route::middleware('auth:api')->get('/user',  [App\Http\Controllers\Api\User\LoginController::class, 'getUser'])->name('user');
 Route::post('/logout', App\Http\Controllers\Api\User\LogoutController::class)->name('logout');
+
+
 Route::middleware('auth:api')->group(function () {
     Route::apiResource('/category-products', App\Http\Controllers\Api\MasterData\CategoryController::class);
     // routing endpoint product
